@@ -1,0 +1,30 @@
+minikube start
+
+minikube start --driver=docker
+
+minikube status
+
+nano nginx-deployment.yaml
+
+kubectl apply -f nginx-deployment.yaml
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl describe deployment nginx-deployment
+
+kubectl expose deployment nginx-deployment --type=NodePort --port=80
+
+kubectl get services
+
+minikube service nginx-deployment
+
+kubectl delete pods --all
+
+kubectl delete svc --all
+
+kubectl delete deployments
+ --all
+
+minikube stop

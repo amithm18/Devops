@@ -1,0 +1,5 @@
+kubectl apply -f nodejs-configmap.yaml
+kubectl apply -f nodejs-pods.yaml
+kubectl get pods
+kubectl port-forward pod/nodejs-pod 3000:3000
+open localhost:3000
