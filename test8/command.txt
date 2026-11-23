@@ -1,0 +1,25 @@
+
+Program 8
+
+kubectl apply -f python-pod.yaml
+
+kubectl exec -it python-pod -- python --version
+
+kubectl exec -it python-pod -- python
+
+kubectl exec -it python-pod -- python -c "print('Hello Students')"
+
+kubectl exec -it python-pod -- python -c "a=10; b=20; print('Sum =', a+b)"
+
+ 
+
+
+
+File Creation Command
+
+kubectl run python-pod \
+  --image=python:3.12-slim \
+  --restart=Never \
+  --dry-run=client -o yaml \
+  --command -- python -u -c "import time; print('Welcome to Kubernetes'); print('Python Pod is running'); time.sleep(3600)" \
+  > python-pod.yaml
