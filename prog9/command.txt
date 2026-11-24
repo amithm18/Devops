@@ -1,0 +1,9 @@
+kubectl apply -f namespaces.yaml
+kubectl apply -f pods.yaml
+kubectl get pods -n dev
+kubectl get pods -n prod
+kubectl get pods
+kubectl get pods -n dev -l app=frontend
+kubectl get pods -A -l env=dev
+kubectl get pods -n prod -l app=backend
+kubectl get pods -A -l env=prod
